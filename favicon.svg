@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="140" viewBox="0 0 400 140" role="img" aria-labelledby="title">
+  <title>318 Installer Clique</title>
+  <defs>
+    <path id="arch" d="M20,120 A180,180 0 0,1 380,120" />
+  </defs>
+  <text font-family="Georgia, serif" font-weight="700" font-size="48">
+    <textPath href="#arch" startOffset="50%" text-anchor="middle">318 INSTALLER CLIQUE</textPath>
+  </text>
+</svg>

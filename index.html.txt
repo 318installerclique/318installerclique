@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>318 Installer Clique</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .main-logo {
+      margin: 40px 0;
+    }
+    .main-logo img {
+      max-width: 400px;
+      height: auto;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #000;
+    }
+    footer img {
+      max-width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <h1>318 Installer Clique</h1>
+    <nav>
+      <a href="#">サービス</a>
+      <a href="#">実績</a>
+      <a href="#">クルー</a>
+      <a href="#">進め方</a>
+      <a href="#">問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- 中央の大きな見出しロゴ -->
+  <div class="main-logo">
+    <img src="images/logo_main.jpg" alt="318 Installer Clique ロゴ">
+  </div>
+
+  <!-- 本文 -->
+  <section>
+    <h2>“現場”からはじまる集客できる内装とブランド設計。</h2>
+    <p>318 Installer Cliqueは、内装施工とビジュアル制作・SNS運用までをワンストップで提供。職人の手仕事に、ストリート/アメカジの美学とデジタルの戦略を融合し、人が集まる店・空間をつくります。</p>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>© 318 Installer Clique</p>
+    <img src="images/logo_footer.png" alt="318 Installer Clique 装飾ロゴ">
+  </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+/* TEAM */
+Developer: GPT-5 Thinking (Assistant)
+Project: 318 Installer Clique
+Last-Updated: 2025-09-20
+
+/* THANKS */
+Fonts: system stack
+Icons/Logo: temporary SVG placeholder (replace with final brand assets)
