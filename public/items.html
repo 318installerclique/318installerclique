@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items | {STORE}</title>
+  <meta name="description" content="一点物のヴィンテージ古着のセレクトショップ（準備中）">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="icon" href="/img/placeholder.svg">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<div class="container">
+    <p class="breadcrumb"><a href="/">TOP</a> &gt; 商品一覧</p>
+    <div class="page-head"><h1 data-title>Items</h1></div>
+    <div class="filters">
+      <label class="visually-hidden" for="category">カテゴリ</label>
+      <select id="category"></select>
+      <label class="visually-hidden" for="sort">並び順</label>
+      <select id="sort">
+        <option value="new">新着順</option>
+        <option value="price_asc">価格の安い順</option>
+        <option value="price_desc">価格の高い順</option>
+      </select>
+      <label><input type="checkbox" id="hide-sold"> 売り切れを隠す</label>
+      <span class="count" data-count></span>
+    </div>
+    <ul class="grid" data-grid></ul>
+    <p class="empty" data-empty hidden>該当する商品がありません。</p>
+    <nav class="pager" data-pager aria-label="ページ送り"></nav>
+    <div style="height:64px"></div>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script type="module" src="/js/pages/items.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "vintage-ec",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "dev": "npx wrangler@3 pages dev public"
+  }
+}
