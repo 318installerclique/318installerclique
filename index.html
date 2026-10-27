@@ -1,79 +1,279 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>318 Installer Clique</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #111;
-      color: #fff;
-      line-height: 1.6;
-      text-align: center;
-    }
-    header {
-      padding: 20px;
-    }
-    nav a {
-      margin: 0 10px;
-      color: #fff;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .main-logo {
-      margin: 40px 0;
-    }
-    .main-logo img {
-      max-width: 400px;
-      height: auto;
-    }
-    section {
-      padding: 40px 20px;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: #000;
-    }
-    footer img {
-      max-width: 200px;
-      height: auto;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>318 INSTALLER CLIQUE｜独立した職人のネットワーク</title>
+  <meta name="description" content="318 INSTALLER CLIQUE は、独立した職人たちの技術と感覚をつなぐネットワーク。仕上がりの美しさだけでなく、その手前にある精度・判断・段取りまでを、ひとつの仕事として届けます。">
+  <!-- 試作のあいだは検索に載せない。本番公開のときにこの1行を消す -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="318 INSTALLER CLIQUE">
+  <meta property="og:title" content="318 INSTALLER CLIQUE｜独立した職人のネットワーク">
+  <meta property="og:description" content="独立した職人たちの技術と感覚をつなぐネットワーク。精度・判断・段取りまでを、ひとつの仕事として。">
+  <meta property="og:image" content="assets/img/site-wall.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap">
+  <link rel="preload" as="image" href="assets/img/site-wall.webp" type="image/webp">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"318 INSTALLER CLIQUE"}</script>
 </head>
 <body>
-<!-- ーー ヘッダー ーー -->
-<header>
-  <img src="assets/icons/header-rogo.jpeg?v=4" alt="318 Installer Clique ロゴ" style="height:140px;">
-  <nav>
-    <a href="#">サービス</a>
-    <a href="#">実績</a>
-    <a href="#">クルー</a>
-    <a href="#">進め方</a>
-    <a href="#">お問い合わせ</a>
+<!--
+  文章と写真の差し替え方は README.md を参照。
+  写真は assets/img/ に同じ名前で置き換える（jpg と webp の2つ）。文章はこのファイルの中の日本語を直接書き換える。
+  【仮】と付いた文章・写真は試作用。本番前に差し替える。
+-->
+<a class="skip" href="#main">本文へ移動</a>
+
+<header class="topbar" data-topbar>
+  <a class="topbar__logo" href="#top" aria-label="318 INSTALLER CLIQUE トップへ">318</a>
+  <button class="topbar__menu" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>Menu</button>
+  <nav class="topbar__nav" id="site-nav" aria-label="メインメニュー" data-menu>
+    <a href="#works">Works</a>
+    <a href="#process">Process</a>
+    <a href="#crew">Crew</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<!-- ーー 中央の大きな見出しロゴ ーー -->
-<div class="main-logo">
-  <img src="assets/icons/header-rogo.jpeg?v=4" alt="318 Installer Clique ロゴ" style="height:300px;">
-</div>
-
-<!-- ーー 本文 ーー -->
-<section>
-  <h2>“現場”からはじまる集客できる内装とブランド設計。</h2>
-  <p>318 Installer Cliqueは、内装施工とビジュアル制作・SNS運用までをワンストップで支援します。</p>
+<!-- 01 HERO：今は写真。動画ができたら <video> の data-src に入れる（README.md） -->
+<section class="hero" id="top" aria-label="318 INSTALLER CLIQUE" data-hero>
+  <div class="hero__media" data-hero-media>
+    <picture>
+      <source srcset="assets/img/site-wall.webp" type="image/webp">
+      <img src="assets/img/site-wall.jpg" alt="" width="709" height="785" fetchpriority="high" decoding="async">
+    </picture>
+    <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true" data-hero-video data-src="" data-poster="assets/img/site-wall.jpg"></video>
+  </div>
+  <div class="hero__inner" data-hero-copy>
+    <div class="hero__title-wrap">
+      <p class="eyebrow">Independent Craftsmen Network</p>
+      <h1 class="hero__title"><span>Built</span><span>with</span><span>craft.</span></h1>
+    </div>
+    <div class="hero__copy">
+      <p>318 INSTALLER CLIQUE は、独立した職人たちの技術と感覚をつなぐネットワーク。仕上がりの美しさだけでなく、その手前にある精度・判断・段取りまでを、ひとつの仕事として届けます。</p>
+      <p class="hero__actions">
+        <a class="btn btn--light" href="#works">Works を見る</a>
+        <a class="btn btn--ghost-light" href="#contact">相談する</a>
+      </p>
+    </div>
+  </div>
+  <p class="hero__scroll" aria-hidden="true">Scroll</p>
 </section>
 
-<!-- ーー フッター ーー -->
-<footer>
-  <p>© 2025 318 Installer Clique</p>
-  <div class="social-icons">
-    <img src="assets/icons/header-rogo.jpeg?v=4" alt="318 Footer Icon" style="height:48px;">
-  </div>
+<main id="main">
+
+  <!-- 02 WORKS：横スクロール（PC はボタン・トラックパッド、スマホはスワイプ） -->
+  <section class="section works" id="works" aria-labelledby="works-title">
+    <div class="section__head reveal">
+      <div>
+        <p class="kicker">02 / Works</p>
+        <h2 class="section__title" id="works-title">Selected Works</h2>
+      </div>
+      <p class="section__lead">施工事例。完成した空間だけでなく、下地や作業の途中も、仕事の一部として見せます。<span class="tmp">【仮】写真と説明は試作用です</span></p>
+    </div>
+    <div class="rail" data-rail>
+      <div class="rail__controls">
+        <p class="rail__count" aria-live="polite" data-rail-count>1 / 4</p>
+        <button class="rail__btn" type="button" aria-label="前の事例" data-rail-prev>←</button>
+        <button class="rail__btn" type="button" aria-label="次の事例" data-rail-next>→</button>
+      </div>
+      <ul class="rail__list" tabindex="0" aria-label="施工事例（左右にスクロール）" data-rail-list>
+        <li class="work">
+          <figure class="work__media">
+            <picture><source srcset="assets/img/site-wall.webp" type="image/webp"><img src="assets/img/site-wall.jpg" alt="ボード張りとパテ処理を終えた商業施設の壁面" width="709" height="785" loading="lazy" decoding="async"></picture>
+          </figure>
+          <div class="work__body">
+            <p class="meta">Project 01 / Interior Finish</p>
+            <h3>仕上がりは、下地で決まる。</h3>
+            <p>見えなくなる下地の精度が、完成後の面の美しさを左右します。<span class="tmp">【仮】</span></p>
+          </div>
+        </li>
+        <li class="work">
+          <figure class="work__media">
+            <picture><source srcset="assets/img/craft-hands.webp" type="image/webp"><img src="assets/img/craft-hands.jpg" alt="床面で作業する職人と脚立（白黒）" width="709" height="515" loading="lazy" decoding="async"></picture>
+          </figure>
+          <div class="work__body">
+            <p class="meta">Project 02 / On Site</p>
+            <h3>現場の空気ごと、仕事を見せる。</h3>
+            <p>段取り、手つき、道具の置き方。現場の静かな緊張感までが仕事です。<span class="tmp">【仮】</span></p>
+          </div>
+        </li>
+        <li class="work">
+          <figure class="work__media">
+            <picture><source srcset="assets/img/site-wall-detail.webp" type="image/webp"><img src="assets/img/site-wall-detail.jpg" alt="パテ処理された壁面の継ぎ目" width="460" height="360" loading="lazy" decoding="async"></picture>
+          </figure>
+          <div class="work__body">
+            <p class="meta">Project 03 / Detail</p>
+            <h3>細部の判断に、職人の個性が出る。</h3>
+            <p>同じ図面でも、納まりの判断ひとつで仕上がりは変わります。<span class="tmp">【仮】</span></p>
+          </div>
+        </li>
+        <li class="work work--soon">
+          <figure class="work__media">
+            <picture><source srcset="assets/img/site-tools.webp" type="image/webp"><img src="assets/img/site-tools.jpg" alt="床に置かれた工具と延長コード" width="469" height="285" loading="lazy" decoding="async"></picture>
+          </figure>
+          <div class="work__body">
+            <p class="meta">Next Project</p>
+            <h3>次の事例を準備しています。</h3>
+            <p>完成写真がそろい次第、ここに追加します。<span class="tmp">【仮】</span></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 03 PROCESS：縦にスクロールすると、パネルが横に進む。動きを減らす設定・JavaScript なしでは縦に並ぶ -->
+  <section class="process" id="process" aria-labelledby="process-title" data-process>
+    <div class="process__pin" data-process-pin>
+      <div class="process__head">
+        <p class="kicker kicker--light">03 / Process</p>
+        <h2 class="section__title" id="process-title">Process in Motion</h2>
+        <ol class="process__steps" aria-label="工程" data-process-steps>
+          <li><button type="button" data-step="0" aria-current="step">01 Prepare</button></li>
+          <li><button type="button" data-step="1">02 Install</button></li>
+          <li><button type="button" data-step="2">03 Finish</button></li>
+          <li><button type="button" data-step="3">04 Connect</button></li>
+        </ol>
+        <div class="process__bar" aria-hidden="true"><span data-process-bar></span></div>
+      </div>
+      <div class="process__track" data-process-track>
+        <article class="panel" aria-labelledby="p1">
+          <div class="panel__media"><picture><source srcset="assets/img/site-wall-detail.webp" type="image/webp"><img src="assets/img/site-wall-detail.jpg" alt="" width="460" height="360" loading="lazy" decoding="async"></picture></div>
+          <div class="panel__copy">
+            <p class="panel__num">01 / Prepare</p>
+            <h3 id="p1">整える。</h3>
+            <p>見えなくなる前の工程に、いちばん差が出る。下準備・養生・段取りを、丁寧に。</p>
+            <dl class="specs"><div><dt>Keyword</dt><dd>Precision</dd></div><div><dt>Value</dt><dd>仕上がりの土台</dd></div></dl>
+          </div>
+        </article>
+        <article class="panel" aria-labelledby="p2">
+          <div class="panel__media"><picture><source srcset="assets/img/craft-floor.webp" type="image/webp"><img src="assets/img/craft-floor.jpg" alt="" width="420" height="455" loading="lazy" decoding="async"></picture></div>
+          <div class="panel__copy">
+            <p class="panel__num">02 / Install</p>
+            <h3 id="p2">納める。</h3>
+            <p>クロス、大工、造作、仕上げ。職種が違っても、良い仕事には共通した静かな緊張感があります。</p>
+            <dl class="specs"><div><dt>Keyword</dt><dd>Craft</dd></div><div><dt>Value</dt><dd>職人の専門性</dd></div></dl>
+          </div>
+        </article>
+        <article class="panel" aria-labelledby="p3">
+          <div class="panel__media"><picture><source srcset="assets/img/site-wall.webp" type="image/webp"><img src="assets/img/site-wall.jpg" alt="" width="709" height="785" loading="lazy" decoding="async"></picture></div>
+          <div class="panel__copy">
+            <p class="panel__num">03 / Finish</p>
+            <h3 id="p3">仕上げる。</h3>
+            <p>見た目の美しさと、長く使える丈夫さ。その両方を、細部の積み重ねでつくります。</p>
+            <dl class="specs"><div><dt>Keyword</dt><dd>Quality</dd></div><div><dt>Value</dt><dd>美しさと耐久の両立</dd></div></dl>
+          </div>
+        </article>
+        <article class="panel" aria-labelledby="p4">
+          <div class="panel__media"><picture><source srcset="assets/img/craft-ladder.webp" type="image/webp"><img src="assets/img/craft-ladder.jpg" alt="" width="379" height="425" loading="lazy" decoding="async"></picture></div>
+          <div class="panel__copy">
+            <p class="panel__num">04 / Connect</p>
+            <h3 id="p4">つなげる。</h3>
+            <p>318 は一社で完結する会社ではなく、職人のネットワーク。案件ごとに、合う技術と人をつなぎます。</p>
+            <dl class="specs"><div><dt>Keyword</dt><dd>Network</dd></div><div><dt>Value</dt><dd>案件と職人をつなぐ</dd></div></dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 CREW：職種の紹介。参加が確定していない人を正式メンバーとして載せない -->
+  <section class="section crew" id="crew" aria-labelledby="crew-title">
+    <div class="section__head reveal">
+      <div>
+        <p class="kicker">04 / Crew</p>
+        <h2 class="section__title" id="crew-title">Crew &amp; Crafts</h2>
+      </div>
+      <p class="section__lead">318 に集まる職種の紹介です。メンバー個人の紹介は、掲載が確定してから追加します。</p>
+    </div>
+    <div class="rail" data-rail>
+      <div class="rail__controls">
+        <p class="rail__count" aria-live="polite" data-rail-count>1 / 4</p>
+        <button class="rail__btn" type="button" aria-label="前の職種" data-rail-prev>←</button>
+        <button class="rail__btn" type="button" aria-label="次の職種" data-rail-next>→</button>
+      </div>
+      <ul class="rail__list rail__list--crew" tabindex="0" aria-label="職種（左右にスクロール）" data-rail-list>
+        <li class="crewcard">
+          <figure class="crewcard__media"><picture><source srcset="assets/img/site-wall-detail.webp" type="image/webp"><img src="assets/img/site-wall-detail.jpg" alt="" width="460" height="360" loading="lazy" decoding="async"></picture></figure>
+          <p class="meta">Interior Finish</p>
+          <h3>内装仕上げ</h3>
+          <p>クロス・床など、空間の印象を決める最後の工程。<span class="tmp">【仮】</span></p>
+        </li>
+        <li class="crewcard">
+          <figure class="crewcard__media"><picture><source srcset="assets/img/craft-ladder.webp" type="image/webp"><img src="assets/img/craft-ladder.jpg" alt="" width="379" height="425" loading="lazy" decoding="async"></picture></figure>
+          <p class="meta">Carpentry / Joinery</p>
+          <h3>大工・造作</h3>
+          <p>空間の骨格と納まりをつくる仕事。<span class="tmp">【仮】</span></p>
+        </li>
+        <li class="crewcard">
+          <figure class="crewcard__media"><picture><source srcset="assets/img/site-wall.webp" type="image/webp"><img src="assets/img/site-wall.jpg" alt="" width="709" height="785" loading="lazy" decoding="async"></picture></figure>
+          <p class="meta">Commercial / Residential</p>
+          <h3>店舗・住宅</h3>
+          <p>商業空間から住まいまで、現場に合わせてチームを組みます。<span class="tmp">【仮】</span></p>
+        </li>
+        <li class="crewcard crewcard--join">
+          <div class="crewcard__media crewcard__media--text" aria-hidden="true">Join<br>the<br>Clique</div>
+          <p class="meta">For Craftsmen</p>
+          <h3>参加する職人の方へ</h3>
+          <p>一緒に仕事をする職人の募集方法は、準備が整い次第ご案内します。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 05 ABOUT / CONTACT -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="about__grid">
+      <div class="reveal">
+        <p class="kicker">05 / About</p>
+        <h2 class="section__title" id="about-title">Independent,<br>together.</h2>
+      </div>
+      <div class="about__text reveal">
+        <p class="about__lead">318 INSTALLER CLIQUE は、独立した職人たちのネットワークです。</p>
+        <p>一人ひとりが自分の技術と名前で仕事をする職人が、案件ごとに集まり、チームとして現場に入ります。</p>
+        <p>大切にしているのは、完成した姿だけではありません。下地を整える精度、現場での判断、次の工程への段取り。見えなくなる部分まで、ひとつの仕事として向き合います。</p>
+        <ul class="values">
+          <li><span>Precision</span>見えなくなる前の精度</li>
+          <li><span>Craft</span>職人それぞれの専門性</li>
+          <li><span>Network</span>案件に合う人と技術をつなぐ</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact__box reveal">
+      <p class="kicker kicker--light">Contact</p>
+      <h2 class="section__title" id="contact-title">ご相談・お問い合わせ</h2>
+      <p class="contact__note">お問い合わせの受付方法は準備中です。受付を始め次第、ここでご案内します。</p>
+      <!-- 受付の担当・方法が決まるまで、送信はできない（フォームは見た目だけ） -->
+      <form class="contact__form" aria-describedby="contact-status" onsubmit="return false">
+        <fieldset disabled>
+          <label>お名前<input type="text" name="name" autocomplete="name"></label>
+          <label>ご連絡先（メール・電話）<input type="text" name="contact" autocomplete="email"></label>
+          <label>ご相談内容<textarea name="message" rows="4"></textarea></label>
+          <button class="btn btn--light" type="submit">送信（準備中）</button>
+        </fieldset>
+        <p class="contact__status" id="contact-status">現在は送信できません。</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <img class="footer__mark" src="assets/img/logo-script.png" alt="318 INSTALLER CLIQUE" width="417" height="440" loading="lazy" decoding="async">
+  <p class="footer__logo">318 INSTALLER CLIQUE</p>
+  <p>© <span data-year>2026</span> 318 INSTALLER CLIQUE</p>
 </footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
