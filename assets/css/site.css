@@ -80,7 +80,7 @@ button { font: inherit; color: inherit; }
 .topbar__nav { align-items: center; }
 .topbar__ig { display: inline-flex; align-items: center; gap: 10px; transition: opacity .25s; }
 .topbar__nav .topbar__ig:hover { text-decoration: none; opacity: .6; }
-.ig-icon { display: block; flex: none; }
+.ig-icon { display: block; flex: none; width: 24px; height: 24px; }
 /* PC はアイコンだけ（読み上げは aria-label） */
 .topbar__ig-label { display: none; }
 .topbar__menu {
