@@ -445,6 +445,8 @@ button { font: inherit; color: inherit; }
 .newslist { margin: 0 var(--gutter); border-top: 1px solid var(--line); }
 .newslist a { display: grid; grid-template-columns: 7.5em 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
 .newslist a:hover span { text-decoration: underline; text-underline-offset: 5px; }
+.newslist--soon { padding: 24px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.newslist__soon { display: inline-block; margin-right: 16px; font-family: var(--font-display); font-weight: 700; color: var(--ink); }
 .newslist time { font-family: var(--font-display); font-size: 13px; letter-spacing: .08em; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 /* works：詳細ページへのリンク（実績を公開したときのカード） */

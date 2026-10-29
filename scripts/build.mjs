@@ -80,12 +80,12 @@ const byDate = (key) => (a, b) => String(b[key] || '').localeCompare(String(a[ke
 // ---------- 共通の部品 ----------
 const IG_ICON = '<svg class="ig-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>';
 
-// メニュー。News・Column は公開した記事があるときだけ出す。トップでは同じページ内の移動（#works）、ほかのページではトップへ（/#works）
-export function navLinks({ onTop, hasNews, hasColumn, site }) {
+// メニュー。Column・News は記事が0件でも常に出す（代表決定 2026-10-29 15:17）。トップでは同じページ内の移動（#works）、ほかのページではトップへ（/#works）
+export function navLinks({ onTop, site }) {
   const h = (anchor) => (onTop ? `#${anchor}` : `/#${anchor}`);
   const items = [
     ['Works', h('works')], ['Process', h('process')], ['Crew', h('crew')], ['Partners', h('partners')],
-    hasColumn && ['Column', '/column/'], hasNews && ['News', '/news/'],
+    ['Column', '/column/'], ['News', '/news/'],
     ['About', h('about')], ['Contact', h('contact')],
   ].filter(Boolean);
   return `${items.map(([label, href]) => `<a href="${href}">${label}</a>`).join('\n    ')}
@@ -357,22 +357,37 @@ function topHead(site) {
   `;
 }
 
-function topNews(news) {
-  if (!news.length) return '';
+// トップの COLUMN・NEWS 欄。新しい3件。0件の間は「準備中」（架空の記事は入れない。代表決定 2026-10-29 15:17）
+function topEntries({ id, title, lead, listLabel, href, label, items }) {
+  const body = items.length
+    ? `<ul class="newslist">
+      ${items.slice(0, 3).map(x => `<li><a href="${href}${x.id}/"><time datetime="${x.date}">${dot(x.date)}</time><span>${esc(x.title)}</span></a></li>`).join('\n      ')}
+    </ul>`
+    : `<p class="newslist newslist--soon"><span class="newslist__soon">準備中</span>${esc(label)}は、内容が確認でき次第ここに掲載します。</p>`;
   return `
-  <section class="section news" id="news" aria-labelledby="news-title">
+  <section class="section news" id="${id}" aria-labelledby="${id}-title">
     <div class="section__head reveal">
       <div>
-        <p class="kicker">News</p>
-        <h2 class="section__title" id="news-title">News</h2>
+        <p class="kicker">${title}</p>
+        <h2 class="section__title" id="${id}-title">${title}</h2>
       </div>
-      <p class="section__lead"><a class="textlink" href="/news/">お知らせの一覧へ</a></p>
+      <p class="section__lead">${esc(lead)}<br><a class="textlink" href="${href}">${esc(listLabel)}</a></p>
     </div>
-    <ul class="newslist">
-      ${news.slice(0, 3).map(n => `<li><a href="/news/${n.id}/"><time datetime="${n.date}">${dot(n.date)}</time><span>${esc(n.title)}</span></a></li>`).join('\n      ')}
-    </ul>
+    ${body}
   </section>
   `;
+}
+
+function topColumnNews(columns, news) {
+  return topEntries({
+    id: 'column', title: 'Column', href: '/column/', listLabel: 'コラムの一覧へ', label: 'コラム',
+    lead: '工務店・設計事務所・施工管理の方に向けた、施工の実務についての記事です。',
+    items: columns.map(c => ({ id: c.id, title: c.title, date: c.publishedAt })),
+  }) + topEntries({
+    id: 'news', title: 'News', href: '/news/', listLabel: 'お知らせの一覧へ', label: 'お知らせ',
+    lead: '新しい施工事例や活動など、318 からのお知らせです。',
+    items: news.map(n => ({ id: n.id, title: n.title, date: n.date })),
+  });
 }
 
 // ---------- 全体 ----------
@@ -383,7 +398,7 @@ export function generate({ site, works = [], columns = [], news = [], indexHtml,
   const pw = works.filter(isPublished).sort(byDate('period')).sort(byDate('publishedAt'));
   const pc = columns.filter(isPublished).sort(byDate('publishedAt'));
   const pn = news.filter(isPublished).sort(byDate('date'));
-  const ctx = { site, works: pw, columns: pc, news: pn, hasNews: pn.length > 0, hasColumn: pc.length > 0 };
+  const ctx = { site, works: pw, columns: pc, news: pn };
   const files = new Map();
 
   files.set('works/index.html', listPage({
@@ -445,7 +460,7 @@ ${urls.map(([p, d]) => `  <url><loc>${esc(site.origin + p)}</loc>${d ? `<lastmod
   html = replaceRegion(html, 'works', pw.length ? `
         ${pw.map(workCardHtml).join('\n        ')}
         ` : placeholderWorks);
-  html = replaceRegion(html, 'news', topNews(pn));
+  html = replaceRegion(html, 'news', topColumnNews(pc, pn));
   files.set('index.html', html);
   return { files };
 }

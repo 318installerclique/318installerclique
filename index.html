@@ -43,6 +43,8 @@
     <a href="#process">Process</a>
     <a href="#crew">Crew</a>
     <a href="#partners">Partners</a>
+    <a href="/column/">Column</a>
+    <a href="/news/">News</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <!-- 公式 Instagram（PC はアイコンだけ、スマホのメニューは文字も出す） -->
@@ -266,8 +268,30 @@
       </div>
     </div>
   </section>
-  <!-- NEWS：公開したお知らせがあるときだけ出る（scripts/build.mjs が書き込む。0件の間は空） -->
-  <!-- build:news --><!-- /build:news -->
+  <!-- COLUMN・NEWS：新しい3件。0件の間は「準備中」（scripts/build.mjs が書き込む。代表決定 2026-10-29 15:17） -->
+  <!-- build:news -->
+  <section class="section news" id="column" aria-labelledby="column-title">
+    <div class="section__head reveal">
+      <div>
+        <p class="kicker">Column</p>
+        <h2 class="section__title" id="column-title">Column</h2>
+      </div>
+      <p class="section__lead">工務店・設計事務所・施工管理の方に向けた、施工の実務についての記事です。<br><a class="textlink" href="/column/">コラムの一覧へ</a></p>
+    </div>
+    <p class="newslist newslist--soon"><span class="newslist__soon">準備中</span>コラムは、内容が確認でき次第ここに掲載します。</p>
+  </section>
+  
+  <section class="section news" id="news" aria-labelledby="news-title">
+    <div class="section__head reveal">
+      <div>
+        <p class="kicker">News</p>
+        <h2 class="section__title" id="news-title">News</h2>
+      </div>
+      <p class="section__lead">新しい施工事例や活動など、318 からのお知らせです。<br><a class="textlink" href="/news/">お知らせの一覧へ</a></p>
+    </div>
+    <p class="newslist newslist--soon"><span class="newslist__soon">準備中</span>お知らせは、内容が確認でき次第ここに掲載します。</p>
+  </section>
+  <!-- /build:news -->
 
   <!-- 05 ABOUT / CONTACT -->
   <section class="section about" id="about" aria-labelledby="about-title">

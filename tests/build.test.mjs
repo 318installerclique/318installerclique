@@ -16,15 +16,22 @@ const news = (id, extra = {}) => ({ id, status: 'published', title: `ダミー�
 const run = (input) => generate({ site, indexHtml, placeholderWorks, ...input }).files;
 const sitemapUrls = (files) => [...files.get('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 
-test('0件：一覧は「準備中」、詳細ページは作らない、sitemap はトップだけ、NEWS 欄とメニューは出さない、WORKS は今のカードのまま', () => {
+test('0件：一覧は「準備中」、詳細ページは作らない、sitemap はトップだけ、COLUMN・NEWS はメニューとトップに出して「準備中」、WORKS は今のカードのまま', () => {
   const f = run({});
   assert.deepEqual([...f.keys()].sort(), ['404.html', 'column/index.html', 'index.html', 'news/index.html', 'sitemap.xml', 'works/index.html']);
   for (const p of ['works/index.html', 'column/index.html', 'news/index.html']) assert.match(f.get(p), /準備中/);
   assert.deepEqual(sitemapUrls(f), ['https://example.test/']);
   const top = f.get('index.html');
-  assert.doesNotMatch(top, /id="news"/);
-  assert.doesNotMatch(top, /href="\/news\/"/);
-  assert.doesNotMatch(top, /href="\/column\/"/);
+  assert.match(top, /<a href="\/column\/">Column<\/a>/, 'メニューに常に出す（代表決定 2026-10-29 15:17）');
+  assert.match(top, /<a href="\/news\/">News<\/a>/);
+  for (const id of ['column', 'news']) {
+    const sec = top.match(new RegExp(`<section class="section news" id="${id}"[\\s\\S]*?</section>`))[0];
+    assert.match(sec, /準備中/, `トップの ${id} 欄は0件の間「準備中」`);
+    assert.doesNotMatch(sec, /<li>/, '架空の記事を入れない');
+  }
+  for (const p of ['works/index.html', 'column/index.html', 'news/index.html', '404.html']) {
+    assert.match(f.get(p), /<a href="\/column\/">Column<\/a>/, `${p} のメニューにも出す`);
+  }
   assert.match(top, /PLACEHOLDER/);
   assert.match(top, /<a href="#partners">Partners<\/a>/);
 });
