@@ -118,3 +118,9 @@ test('今の公開データ：実績・記事・お知らせは0件（詳細ペ�
   const pub = [...input.works, ...input.columns, ...input.news].filter(x => x.status === 'published');
   assert.equal(pub.length, 0);
 });
+
+test('content/ には公開するものだけ（下書きは Notion で管理し、公開リポジトリに置かない）', async () => {
+  const input = await loadInput(ROOT);
+  const notPublished = [...input.works, ...input.columns, ...input.news].filter(x => x.status !== 'published').map(x => x.id);
+  assert.deepEqual(notPublished, [], 'published 以外のファイルを content/ から外す');
+});

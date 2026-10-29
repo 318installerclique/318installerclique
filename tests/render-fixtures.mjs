@@ -35,6 +35,6 @@ const { files } = generate({
   news: Array.from({ length: n }, (_, i) => news(i + 1, days[i])),
 });
 await mkdir(out, { recursive: true });
-for (const f of ['assets', '_redirects', 'robots.txt']) await cp(join(ROOT, f), join(out, f), { recursive: true });
+for (const f of ['assets', 'functions', 'robots.txt']) await cp(join(ROOT, f), join(out, f), { recursive: true });
 for (const [p, body] of files) { await mkdir(dirname(join(out, p)), { recursive: true }); await writeFile(join(out, p), body); }
 console.log(`${out} に作りました（${mode}）`);

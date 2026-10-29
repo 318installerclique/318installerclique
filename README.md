@@ -22,7 +22,7 @@ v0.6（2026-10-29）で FOR PARTNERS・CONTACT の区分（法人／個人）・
 | `scripts/build.mjs` | `content/` から `works/`・`column/`・`news/`・`sitemap.xml`・`404.html` と `index.html` の印（`<!-- build:… -->`）の間を作る |
 | `works/` `column/` `news/` | 作られたページ（直接書き換えない） |
 | `assets/js/analytics.js` | 318 専用の GA4。測定IDが空の間は何も送らない。手順は `docs/search-console-ga4.md` |
-| `_redirects` | 公開しないフォルダ（content・tests・scripts・docs）をトップへ移動させる |
+| `functions/_middleware.js` | 公開しないフォルダ・ファイル（content・tests・scripts・docs・functions・README）を 404 で返す。%エンコードなどの言い換えも元に戻して判定（Cloudflare Pages Functions。ビルド設定は変えない） |
 | `tests/` | 自動テスト：`node --test tests/*.test.mjs` |
 
 ## 文章の差し替え
@@ -66,6 +66,9 @@ python3 -m http.server 8318
 ブラウザで http://localhost:8318/ を開きます。
 
 ## WORKS・COLUMN・NEWS を足す
+
+**このリポジトリは GitHub で公開されています。下書き（本人未確認の実績・記事・お知らせ）はリポジトリに置きません。**
+下書きは Notion で管理し、職人本人の確認と代表の承認が済んで公開するものだけを `content/` に入れます（2026-10-29 Claude Chat 判断）。
 
 `content/README.md` を参照。公開するのは `"status": "published"` のものだけ。0件の間は一覧が「準備中」になり、sitemap に入りません。
 NEWS が0件の間は、トップの NEWS 欄とメニューの News が出ません（COLUMN も同じ）。
