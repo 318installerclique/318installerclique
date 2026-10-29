@@ -1,0 +1,37 @@
+{
+  "id": "url-ni-naru-eisuji",
+  "status": "draft",
+  "title": "（施工事例の題名）",
+  "summary": "（依頼内容・施工した範囲・現場で重視したこと。1〜2文）",
+  "category": "（工種。例：内装仕上げ）",
+  "scope": "（施工内容）",
+  "location": "（施工箇所）",
+  "area": "（公開してよい範囲の地域。許可が無ければ空のまま）",
+  "craftsmen": [{ "name": "（担当職人。本人の掲載許可後）", "craft": "（職種）" }],
+  "period": "（施工時期。例：2026年11月）",
+  "duration": "（工期。必要な場合だけ）",
+  "relation": "（元請・協力の関係。公開の許可後だけ）",
+  "points": {
+    "issue": "（現場の課題）",
+    "method": "（採用した方法）",
+    "reason": "（なぜそうしたか）",
+    "result": "（完成時にどうなったか）"
+  },
+  "photos": [
+    {
+      "src": "/assets/img/works/url-ni-naru-eisuji/finish-1.jpg",
+      "webp": "/assets/img/works/url-ni-naru-eisuji/finish-1.webp",
+      "alt": "（写真の説明）",
+      "width": 1600,
+      "height": 1200,
+      "kind": "finish",
+      "caption": "",
+      "permission": { "photographer": "（撮影者）", "building": "（建物・施主の掲載許諾）", "by": "（許諾を確認した人）", "confirmedAt": "YYYY-MM-DD" }
+    }
+  ],
+  "body": "",
+  "relatedWorks": [],
+  "relatedColumns": [],
+  "publishedAt": "YYYY-MM-DD",
+  "updatedAt": ""
+}

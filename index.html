@@ -21,7 +21,11 @@
   <link rel="preload" as="image" href="assets/img/site-wall.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/site.css">
   <script>document.documentElement.classList.add('js')</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"318 INSTALLER CLIQUE"}</script>
+  <!-- build:head -->
+  <link rel="canonical" href="https://318-installer-clique.pages.dev/">
+  <meta property="og:url" content="https://318-installer-clique.pages.dev/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"318 INSTALLER CLIQUE","url":"https://318-installer-clique.pages.dev/","sameAs":["https://www.instagram.com/318installerclique/"]}</script>
+  <!-- /build:head -->
 </head>
 <body>
 <!--
@@ -34,14 +38,16 @@
 <header class="topbar" data-topbar>
   <a class="topbar__logo" href="#top" aria-label="318 INSTALLER CLIQUE トップへ">318</a>
   <button class="topbar__menu" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>Menu</button>
-  <nav class="topbar__nav" id="site-nav" aria-label="メインメニュー" data-menu>
+  <nav class="topbar__nav" id="site-nav" aria-label="メインメニュー" data-menu><!-- build:nav -->
     <a href="#works">Works</a>
     <a href="#process">Process</a>
     <a href="#crew">Crew</a>
+    <a href="#partners">Partners</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <!-- 公式 Instagram（PC はアイコンだけ、スマホのメニューは文字も出す） -->
-    <a class="topbar__ig" href="https://www.instagram.com/318installerclique/" target="_blank" rel="noopener noreferrer" aria-label="Instagram（新しいタブで開きます）"><svg class="ig-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg><span class="topbar__ig-label">Instagram</span></a>
+    <a class="topbar__ig" href="https://www.instagram.com/318installerclique/" target="_blank" rel="noopener noreferrer" aria-label="Instagram（新しいタブで開きます）" data-track="instagram_click"><svg class="ig-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg><span class="topbar__ig-label">Instagram</span></a>
+    <!-- /build:nav -->
   </nav>
 </header>
 
@@ -63,7 +69,7 @@
       <p>318 INSTALLER CLIQUE は、独立した職人たちの技術と感覚をつなぐネットワーク。仕上がりの美しさだけでなく、その手前にある精度・判断・段取りまでを、ひとつの仕事として届けます。</p>
       <p class="hero__actions">
         <a class="btn btn--light" href="#works">Works を見る</a>
-        <a class="btn btn--ghost-light" href="#contact">相談する</a>
+        <a class="btn btn--ghost-light" href="#contact" data-track="contact_cta_click">相談する</a>
       </p>
     </div>
   </div>
@@ -87,7 +93,7 @@
         <button class="rail__btn" type="button" aria-label="前の事例" data-rail-prev>←</button>
         <button class="rail__btn" type="button" aria-label="次の事例" data-rail-next>→</button>
       </div>
-      <ul class="rail__list" tabindex="0" aria-label="施工事例（左右にスクロール）" data-rail-list>
+      <ul class="rail__list" tabindex="0" aria-label="施工事例（左右にスクロール）" data-rail-list><!-- build:works -->
         <li class="work">
           <figure class="work__media">
             <picture><source srcset="assets/img/site-wall.webp" type="image/webp"><img src="assets/img/site-wall.jpg" alt="ボード張りとパテ処理を終えた商業施設の壁面" width="709" height="785" loading="lazy" decoding="async"></picture>
@@ -127,7 +133,7 @@
             <h3>次の事例を準備しています。</h3>
             <p>完成写真がそろい次第、ここに追加します。<span class="tmp">【仮】</span></p>
           </div>
-        </li>
+        </li><!-- /build:works -->
       </ul>
     </div>
   </section>
@@ -231,6 +237,38 @@
     </div>
   </section>
 
+  <!-- FOR PARTNERS：工務店・設計事務所・施工会社の方へ（文案は Notion 正本 v0.8）。
+       318 が施工会社・契約の当事者だと読める書き方をしない。対応工種・地域は職人本人の確認後に載せる -->
+  <section class="section partners" id="partners" aria-labelledby="partners-title">
+    <div class="partners__inner">
+      <div class="partners__head reveal">
+        <p class="kicker">For Partners</p>
+        <h2 class="section__title" id="partners-title">Work With Us.</h2>
+        <p class="partners__sub">現場を支える、技術でつながる。</p>
+      </div>
+      <div class="partners__body reveal">
+        <p class="partners__lead">工務店、設計事務所、施工会社の皆さまへ。318は、独立して活動する職人の技術と施工実績を紹介する取り組みです。専門分野や仕事の進め方を知っていただき、現場で必要な協力関係につなげることを目指しています。</p>
+        <dl class="partners__blocks">
+          <div>
+            <dt>施工協力の相談</dt>
+            <dd>現場の条件と必要な工種を伺い、対応可否や担当者を確認することを想定しています。</dd>
+          </div>
+          <div>
+            <dt>継続的な取引関係</dt>
+            <dd>一件の施工だけでなく、仕事の品質と連絡の確実さを積み重ねる関係を大切にします。</dd>
+          </div>
+          <div>
+            <dt>施工内容・対応範囲</dt>
+            <dd>対応工種・地域・納期等は職人本人への確認後に掲載します。</dd>
+          </div>
+        </dl>
+        <p class="partners__cta"><a class="btn btn--dark" href="#contact" data-contact-type="corporate" data-track="contact_cta_click">施工協力について相談する</a></p>
+      </div>
+    </div>
+  </section>
+  <!-- NEWS：公開したお知らせがあるときだけ出る（scripts/build.mjs が書き込む。0件の間は空） -->
+  <!-- build:news --><!-- /build:news -->
+
   <!-- 05 ABOUT / CONTACT -->
   <section class="section about" id="about" aria-labelledby="about-title">
     <div class="about__grid">
@@ -254,17 +292,27 @@
   <section class="section contact" id="contact" aria-labelledby="contact-title">
     <div class="contact__box reveal">
       <p class="kicker kicker--light">Contact</p>
-      <h2 class="section__title" id="contact-title">ご相談・お問い合わせ</h2>
-      <p class="contact__note">お問い合わせの受付方法は準備中です。受付を始め次第、ここでご案内します。</p>
-      <!-- 受付の担当・方法が決まるまで、送信はできない（フォームは見た目だけ） -->
-      <form class="contact__form" aria-describedby="contact-status" onsubmit="return false">
-        <fieldset disabled>
-          <label>お名前<input type="text" name="name" autocomplete="name"></label>
-          <label>ご連絡先（メール・電話）<input type="text" name="contact" autocomplete="email"></label>
-          <label>ご相談内容<textarea name="message" rows="4"></textarea></label>
-          <button class="btn btn--light" type="submit">送信（準備中）</button>
+      <h2 class="section__title" id="contact-title">Let's Talk.</h2>
+      <p class="contact__note">施工協力のご相談、住宅・店舗工事について。<br><strong class="contact__soon">受付準備中</strong>：受付の方法が決まるまで、送信はできません。</p>
+      <!-- 受付の担当・送信先・個人情報の扱い・契約の当事者が決まるまで、送信しない（通信しない・どこにも保存しない）。
+           入力欄は使えない状態。相談の区分（法人／個人）の切り替えだけ試せる -->
+      <form class="contact__form" aria-describedby="contact-status" novalidate data-contact-form>
+        <fieldset class="contact__type">
+          <legend>ご相談の区分</legend>
+          <label><input type="radio" name="type" value="corporate" checked data-contact-radio> 工務店・設計事務所・施工会社からの相談</label>
+          <label><input type="radio" name="type" value="personal" data-contact-radio> 住宅・店舗オーナーからの相談</label>
         </fieldset>
-        <p class="contact__status" id="contact-status">現在は送信できません。</p>
+        <fieldset class="contact__fields" disabled>
+          <label data-only="corporate">会社・事務所名<span class="req">必須</span><input type="text" name="company" autocomplete="organization" required></label>
+          <label><span data-label-corporate>担当者名</span><span data-label-personal hidden>お名前</span><span class="req">必須</span><input type="text" name="name" autocomplete="name" required></label>
+          <label>返信用メール<span class="req">必須</span><input type="email" name="email" autocomplete="email" required></label>
+          <label>相談したい工種<span class="req">必須</span><input type="text" name="craft" required></label>
+          <label>現場の市区町村<span class="opt">任意</span><input type="text" name="city"></label>
+          <label>希望時期<span class="opt">任意</span><input type="text" name="timing"></label>
+          <label>相談内容<span class="req">必須</span><textarea name="message" rows="4" required></textarea></label>
+          <button class="btn btn--light" type="submit">送信（受付準備中）</button>
+        </fieldset>
+        <p class="contact__status" id="contact-status" role="status" data-contact-status>受付準備中のため、現在は送信できません。入力した内容がどこかへ送られたり、保存されたりすることはありません。</p>
       </form>
     </div>
   </section>
@@ -273,10 +321,11 @@
 <footer class="footer">
   <img class="footer__mark" src="assets/img/logo-script.png" alt="318 INSTALLER CLIQUE" width="417" height="440" loading="lazy" decoding="async">
   <p class="footer__logo">318 INSTALLER CLIQUE</p>
-  <p class="footer__sns"><a href="https://www.instagram.com/318installerclique/" target="_blank" rel="noopener noreferrer" aria-label="Instagram（新しいタブで開きます）">Instagram <span aria-hidden="true">↗</span></a></p>
+  <p class="footer__sns"><a href="https://www.instagram.com/318installerclique/" target="_blank" rel="noopener noreferrer" aria-label="Instagram（新しいタブで開きます）" data-track="instagram_click">Instagram <span aria-hidden="true">↗</span></a></p>
   <p>© <span data-year>2026</span> 318 INSTALLER CLIQUE</p>
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/analytics.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+{
+  "id": "url-ni-naru-eisuji",
+  "status": "draft",
+  "title": "（題名）",
+  "date": "YYYY-MM-DD",
+  "body": "（事実だけを書く）",
+  "links": [{ "label": "（リンクの文字）", "href": "/works/xxxx/" }]
+}

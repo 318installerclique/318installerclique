@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
-# 本番の URL（ドメイン）が決まったら sitemap.xml を作り、ここに Sitemap: の行を足す
+# 正式公開までは、各ページの <meta name="robots" content="noindex, nofollow"> で検索に出さない
+# ドメインが決まったら content/site.json の origin を変えて node scripts/build.mjs を実行し、この行も書き換える
+Sitemap: https://318-installer-clique.pages.dev/sitemap.xml

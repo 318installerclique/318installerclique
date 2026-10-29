@@ -242,6 +242,30 @@
   window.addEventListener('load', layoutProcess);
   onScroll();
 
+  /* ---------- CONTACT：相談の区分（法人／個人）の切り替え。送信はしない ---------- */
+  var contactForm = document.querySelector('[data-contact-form]');
+  if (contactForm) {
+    var radios = contactForm.querySelectorAll('[data-contact-radio]');
+    var setType = function (type) {
+      var corporate = type !== 'personal';
+      radios.forEach(function (r) { r.checked = (r.value === 'corporate') === corporate; });
+      contactForm.querySelectorAll('[data-only="corporate"]').forEach(function (el) {
+        el.hidden = !corporate;
+        el.querySelectorAll('input').forEach(function (i) { i.required = corporate; }); // 会社名は法人だけ必須
+      });
+      contactForm.querySelectorAll('[data-label-corporate]').forEach(function (el) { el.hidden = !corporate; });
+      contactForm.querySelectorAll('[data-label-personal]').forEach(function (el) { el.hidden = corporate; });
+    };
+    radios.forEach(function (r) { r.addEventListener('change', function () { setType(r.value); }); });
+    // 受付を始めるまでは、どこにも送らない（通信しない・保存しない）
+    contactForm.addEventListener('submit', function (e) { e.preventDefault(); });
+    // 「施工協力について相談する」などから来たら、その区分を選んだ状態にする
+    document.querySelectorAll('a[data-contact-type]').forEach(function (a) {
+      a.addEventListener('click', function () { setType(a.getAttribute('data-contact-type')); });
+    });
+    setType('corporate');
+  }
+
   /* ---------- 年 ---------- */
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());

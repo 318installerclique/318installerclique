@@ -1,0 +1,14 @@
+{
+  "id": "url-ni-naru-eisuji",
+  "status": "draft",
+  "title": "（題名）",
+  "summary": "（概要。検索結果の説明にも使う。1〜2文）",
+  "category": "（工種）",
+  "author": "（文を書いた人。いなければ空。空なら表示も構造化データも出さない）",
+  "reviewer": "（技術確認者。職人本人が内容を確認してから入れる。空のままでは公開できない）",
+  "publishedAt": "YYYY-MM-DD",
+  "updatedAt": "",
+  "body": "（導入）\n\n## 発生原因\n\n（本文）\n\n## 施工で見るポイント\n\n- （箇条書き）\n- （箇条書き）",
+  "images": [],
+  "relatedWorks": []
+}
